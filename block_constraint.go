@@ -72,6 +72,7 @@ func (bb BorrowedBlocks) BlockConstraints(kind BlockKind) []*BlockConstraint {
 type BlockSignature struct {
 	Type string `json:"type,omitempty"`
 	Rel  string `json:"rel,omitempty"`
+	Role string `json:"role,omitempty"`
 }
 
 // BlockConstraint is a specification for a block.
@@ -161,6 +162,14 @@ func (bc BlockConstraint) declares(b *newsdoc.Block) (Match, []string) {
 		}
 
 		attributes = append(attributes, string(blockAttrRel))
+	}
+
+	if bc.Declares.Role != "" {
+		if b.Role != bc.Declares.Role {
+			return NoMatch, nil
+		}
+
+		attributes = append(attributes, string(blockAttrRole))
 	}
 
 	return MatchDeclaration, attributes

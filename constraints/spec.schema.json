@@ -151,7 +151,8 @@
       "type": "object",
       "properties": {
         "type": {"type":"string"},
-        "rel": {"type":"string"}
+        "rel": {"type":"string"},
+        "role": {"type":"string"}
       },
       "anyOf": [
         {"required": ["type"]},

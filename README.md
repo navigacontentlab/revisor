@@ -61,7 +61,7 @@ You should get the same validation errors as in the previous example, but in JSO
 
 ## Writing specifications
 
-The main entities points in a specification are documents, blocks and properties. Documents are declared by type, blocks by type and/or rel, and properties by name. An entity is not valid if we don't have a matching declaration for it, regardless of whether somebody has pattern-matched against it.
+The main entities points in a specification are documents, blocks and properties. Documents are declared by type, blocks by type rel, and/or role, and properties by name. An entity is not valid if we don't have a matching declaration for it, regardless of whether somebody has pattern-matched against it.
 
 Both pattern matching and a lot of the validation that's performed is done though key value pairs of a name and a string constraint. Say that we want to match all links that have a rel of "subject", "channel", or "section" and add the ability to have "broader" links added to them, the specification would then look like this:
 
