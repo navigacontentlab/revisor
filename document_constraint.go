@@ -1,7 +1,6 @@
 package revisor
 
 import (
-	"encoding/json"
 	"fmt"
 
 	"github.com/ttab/newsdoc"
@@ -21,31 +20,6 @@ type DocumentConstraint struct {
 	Meta       []*BlockConstraint `json:"meta,omitempty"`
 	Content    []*BlockConstraint `json:"content,omitempty"`
 	Attributes ConstraintMap      `json:"attributes,omitempty"`
-}
-
-type unmarshalDC DocumentConstraint
-
-func (dc *DocumentConstraint) UnmarshalJSON(data []byte) error {
-	var udc unmarshalDC
-
-	// Unmarshal into unmarshalBC and check for attributes with optional set
-	// to true.
-	err := json.Unmarshal(data, &udc)
-	if err != nil {
-		return fmt.Errorf("unmarshal JSON: %w", err)
-	}
-
-	if udc.Attributes != nil {
-		for k, a := range udc.Attributes {
-			a.AllowEmpty = a.AllowEmpty || a.Optional
-
-			udc.Attributes[k] = a
-		}
-	}
-
-	*dc = DocumentConstraint(udc)
-
-	return nil
 }
 
 // BlockConstraints implements the BlockConstraintsSet interface.
@@ -109,6 +83,9 @@ func (dc DocumentConstraint) checkAttributes(
 
 			continue
 		}
+
+		// Optional attributes are empty strings.
+		check.AllowEmpty = check.AllowEmpty || check.Optional
 
 		err := check.Validate(value, ok, vCtx)
 		if err != nil {

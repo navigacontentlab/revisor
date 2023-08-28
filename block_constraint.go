@@ -1,7 +1,6 @@
 package revisor
 
 import (
-	"encoding/json"
 	"fmt"
 	"strings"
 
@@ -92,31 +91,6 @@ type BlockConstraint struct {
 	BlocksFrom  []BlocksFrom       `json:"blocksFrom,omitempty"`
 }
 
-type unmarshalBC BlockConstraint
-
-func (bc *BlockConstraint) UnmarshalJSON(data []byte) error {
-	var ubc unmarshalBC
-
-	// Unmarshal into unmarshalBC and check for attributes with optional set
-	// to true.
-	err := json.Unmarshal(data, &ubc)
-	if err != nil {
-		return fmt.Errorf("unmarshal JSON: %w", err)
-	}
-
-	if ubc.Attributes != nil {
-		for k, a := range ubc.Attributes {
-			a.AllowEmpty = a.AllowEmpty || a.Optional
-
-			ubc.Attributes[k] = a
-		}
-	}
-
-	*bc = BlockConstraint(ubc)
-
-	return nil
-}
-
 // BlockConstraints implements the BlockConstraintsSet interface.
 func (bc BlockConstraint) BlockConstraints(kind BlockKind) []*BlockConstraint {
 	switch kind {
@@ -151,6 +125,9 @@ func (bc BlockConstraint) Matches(b *newsdoc.Block) (Match, []string) {
 
 	for k, check := range bc.Match {
 		value, ok := blockMatchAttribute(b, k)
+
+		// Optional attributes are empty strings.
+		check.AllowEmpty = check.AllowEmpty || check.Optional
 
 		err := check.Validate(value, ok, nil)
 		if err != nil {
