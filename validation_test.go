@@ -10,6 +10,7 @@ import (
 
 	"github.com/ttab/newsdoc"
 	"github.com/ttab/revisor"
+	"github.com/ttab/revisor/constraints"
 	"github.com/ttab/revisor/internal"
 )
 
@@ -29,9 +30,14 @@ func FuzzValidationDocuments(f *testing.F) {
 		f.Fatalf("failed to unmarshal example constraints: %v", err)
 	}
 
+	validator, err := revisor.NewValidator(constraints, extraConstraints)
+	if err != nil {
+		f.Fatalf("failed to create validator: %v", err)
+	}
+
 	paths, err := filepath.Glob(filepath.Join("testdata", "*.json"))
 	if err != nil {
-		f.Fatalf("failed to glob for result files: %v", err)
+		f.Fatalf("failed to glob for sample document files: %v", err)
 	}
 
 	for i := range paths {
@@ -48,11 +54,6 @@ func FuzzValidationDocuments(f *testing.F) {
 		var document newsdoc.Document
 
 		if !decodeBytes(t, documentData, &document) {
-			return
-		}
-
-		validator, err := revisor.NewValidator(constraints, extraConstraints)
-		if err != nil {
 			return
 		}
 
@@ -181,28 +182,43 @@ type validatorTest struct {
 	Validator *revisor.Validator
 }
 
-func TestValidateDocument(t *testing.T) {
-	var (
-		constraints      revisor.ConstraintSet
-		extraConstraints revisor.ConstraintSet
-	)
+func decodeConstraintSets(
+	t *testing.T, names ...string,
+) []revisor.ConstraintSet {
+	t.Helper()
 
-	err := internal.UnmarshalFile("constraints/core.json", &constraints)
+	var constraints []revisor.ConstraintSet
+
+	for _, n := range names {
+		var c revisor.ConstraintSet
+
+		err := internal.UnmarshalFile(n, &c)
+		if err != nil {
+			t.Fatalf("failed to load constraints from %q: %v",
+				n, err)
+		}
+
+		constraints = append(constraints, c)
+	}
+
+	return constraints
+}
+
+func TestValidateDocument(t *testing.T) {
+	core, err := constraints.CoreSchema()
 	if err != nil {
 		t.Fatalf("failed to load base constraints: %v", err)
 	}
 
-	err = internal.UnmarshalFile("constraints/tt.json", &extraConstraints)
-	if err != nil {
-		t.Fatalf("failed to load org constraints: %v", err)
-	}
-
-	baseValidator, err := revisor.NewValidator(constraints)
+	baseValidator, err := revisor.NewValidator(core...)
 	if err != nil {
 		t.Fatalf("failed to create base validator: %v", err)
 	}
 
-	orgValidator, err := revisor.NewValidator(constraints, extraConstraints)
+	extraConstraints := decodeConstraintSets(t,
+		"constraints/tt.json", "constraints/tt_planning.json")
+
+	orgValidator, err := baseValidator.WithConstraints(extraConstraints...)
 	if err != nil {
 		t.Fatalf("failed to create org validator: %v", err)
 	}

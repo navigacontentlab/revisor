@@ -12,7 +12,7 @@ func TestCore(t *testing.T) {
 		t.Fatalf("failed to load core schema: %v", err)
 	}
 
-	if len(spec.Documents) == 0 {
-		t.Fatalf("expected core constraint set to contain documents")
+	if len(spec) == 0 {
+		t.Fatalf("expected one or more core constraint sets")
 	}
 }

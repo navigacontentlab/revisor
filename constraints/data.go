@@ -12,22 +12,51 @@ import (
 //go:embed core.json
 var coreSchema []byte
 
-func CoreSchemaVersion() string {
-	return "v1.0.1"
+//go:embed core_planning.json
+var corePlanningSchema []byte
+
+type schemaData struct {
+	Name string
+	Data []byte
 }
 
-func CoreSchema() (revisor.ConstraintSet, error) {
-	dec := json.NewDecoder(bytes.NewReader(coreSchema))
+var specifications = []schemaData{
+	{Name: "core", Data: coreSchema},
+	{Name: "core-planning", Data: corePlanningSchema},
+}
+
+func CoreSchemaVersion() string {
+	return "v1.1.0"
+}
+
+func CoreSchema() ([]revisor.ConstraintSet, error) {
+	var core []revisor.ConstraintSet
+
+	for _, s := range specifications {
+		var cs revisor.ConstraintSet
+
+		err := strictUnmarshalBytes(s.Name, s.Data, &cs)
+		if err != nil {
+			return nil, err
+		}
+
+		core = append(core, cs)
+	}
+
+	return core, nil
+}
+
+func strictUnmarshalBytes(name string, data []byte, o any) error {
+	dec := json.NewDecoder(bytes.NewReader(data))
 
 	dec.DisallowUnknownFields()
 
-	var spec revisor.ConstraintSet
-
-	err := dec.Decode(&spec)
+	err := dec.Decode(o)
 	if err != nil {
-		return revisor.ConstraintSet{}, fmt.Errorf(
-			"failed to unmarshal core constraints: %w", err)
+		return fmt.Errorf(
+			"failed to unmarshal %s: %w",
+			name, err)
 	}
 
-	return spec, nil
+	return nil
 }

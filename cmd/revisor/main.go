@@ -89,7 +89,7 @@ func loadConstraints(
 				"failed to load built in core schema: %w", err)
 		}
 
-		list = append(list, core)
+		list = append(list, core...)
 	}
 
 	for _, source := range sources {

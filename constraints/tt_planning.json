@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "name": "TT - Planning",
+  "documents": [
+    {
+      "match": {
+        "type": {
+          "const": "core/planning-item"
+        }
+      },
+      "meta": [
+        {
+          "name": "Slugline",
+          "description": "Slug to use when publishing the article",
+          "declares": {
+            "type": "tt/slugline"
+          },
+          "maxCount": 1,
+          "attributes": {
+            "value": {}
+          }
+        }
+      ],
+      "links": [
+        {
+          "name": "Article sector",
+          "declares": {
+            "rel": "sector",
+            "type": "tt/sector"
+          },
+          "maxCount": 1,
+          "attributes": {
+            "title": {},
+            "value": {}
+          }
+        }
+      ]
+    }
+  ]
+}

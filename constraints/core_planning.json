@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "name": "Core - Planning",
+  "documents": [
+    {
+      "name": "Planning item",
+      "description": "The planning item for an article or other deliverables",
+      "declares": "core/planning-item",
+      "links": [
+        {
+          "name": "The event that this planning item is coverage of, if any",
+          "declares": {
+            "rel": "associated",
+            "type": "core/event"
+          },
+          "maxCount": 1,
+          "attributes": {
+            "uuid": {}
+          }
+        }
+      ],
+      "meta": [
+        {
+          "name": "Main metadata block",
+          "declares": {
+            "type": "core/planning-item"
+          },
+          "count": 1,
+          "data": {
+            "date": {
+              "description": "The date the deliverables should be published",
+              "time": "2006-01-02"
+            },
+            "public": {
+              "description": "Whether (a scrubbed version of) this planning item can be made publicly available.",
+              "format": "bool"
+            },
+            "tentative": {
+              "description": "Whether the planning item is tentative.",
+              "format": "bool"
+            },
+            "urgency": {
+              "description": "The urgency of this planning item on a scale of 1 to 5 with 1 being the highest.",
+              "format": "int"
+            }
+          }
+        },
+        {
+          "declares": {
+            "type": "core/assignment"
+          },
+          "attributes": {
+            "id": {
+              "description": "A unique identifier for the assignment",
+              "format": "uuid"
+            }
+          },
+          "data": {
+            "full_day": {
+              "description": "Whether this is assignment is for a date rather than a specific time.",
+              "format": "bool"
+            },
+            "starts": {
+              "description": "When the assignment should be carried out",
+              "format": "RFC3339"
+            },
+            "ends": {
+              "description": "When work on the assignment ends.",
+              "format": "RFC3339",
+              "optional": true
+            },
+            "publish": {
+              "description": "The exact time the deliverables will be published",
+              "format": "RFC3339",
+              "optional": true
+            },
+            "publish_slot": {
+              "description": "The approximate timeslot the deliverables should be published.",
+              "format": "int",
+              "optional": true
+            },
+            "status": {
+              "enum": [
+                "todo",
+                "started",
+                "done"
+              ]
+            }
+          },
+          "meta": [
+            {
+              "name": "Block describing what kind of assignment this is",
+              "declares": {
+                "type": "core/assignment-kind"
+              },
+              "minCount": 1,
+              "attributes": {
+                "value": {
+                  "enum": [
+                    "text",
+                    "photo",
+                    "video",
+                    "graphics"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Internal assignment description",
+              "declares": {
+                "type": "core/description",
+                "role": "internal"
+              },
+              "maxCount": 1,
+              "data": {
+                "text": {}
+              }
+            }
+          ],
+          "links": [
+            {
+              "name": "Assignee",
+              "declares": {
+                "type": "core/author",
+                "rel": "assignee"
+              },
+              "attributes": {
+                "uuid": {},
+                "name": {
+                  "optional": true
+                },
+                "role": {
+                  "description": "The role the assignee has in fulfilling the assignment.",
+                  "enum": [
+                    "primary",
+                    "standby"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "A deliverable of the planning item",
+              "declares": {
+                "rel": "deliverable"
+              },
+              "attributes": {
+                "uuid": {},
+                "type": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
