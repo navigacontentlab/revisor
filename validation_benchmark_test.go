@@ -22,7 +22,7 @@ func BenchmarkValidateDocument(b *testing.B) {
 			"failed to load constraints: %w", err))
 	}
 
-	err = internal.UnmarshalFile("constraints/example.json", &extraConstraints)
+	err = internal.UnmarshalFile("constraints/customer.json", &extraConstraints)
 	if err != nil {
 		panic(fmt.Errorf(
 			"failed to load constraints: %w", err))
