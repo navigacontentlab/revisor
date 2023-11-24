@@ -1,0 +1,56 @@
+name: Verify code
+
+on:
+  push:
+    branches: [main, feature/*]
+permissions:
+  contents: read
+
+jobs:
+  run:
+    strategy:
+      matrix:
+        go: [ '1.21' ]
+    name: Verify Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Install Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go }}
+          check-latest: true
+
+      - name: Go Format
+        run: gofmt -s -w . && git diff --exit-code
+
+      - name: Go Tidy
+        run: go mod tidy && git diff --exit-code
+
+      - name: Go Mod
+        run: go mod download
+
+      - name: Go Mod Verify
+        run: go mod verify
+
+      - name: GolangCI-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.55
+          args: --timeout=4m
+
+      - name: Test
+        run: go test -v -count=1 -race -shuffle=on -coverprofile=coverage.txt ./...
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v3
+        continue-on-error: true  # we don't care if it fails
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}  # set in repository settings
+          file: ./coverage.txt  # file from the previous step
+          fail_ci_if_error: false
+
+      - name: Go Benchmark
+        run: go test -v -shuffle=on -run=- -bench=. -benchtime=1x ./...
