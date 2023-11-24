@@ -44,13 +44,13 @@ jobs:
       - name: Test
         run: go test -v -count=1 -race -shuffle=on -coverprofile=coverage.txt ./...
 
+      - name: Go Benchmark
+        run: go test -v -shuffle=on -run=- -bench=. -benchtime=1x -coverprofile=benchmark.txt ./...
+
       - name: Upload Coverage
         uses: codecov/codecov-action@v3
         continue-on-error: true  # we don't care if it fails
         with:
           token: ${{secrets.CODECOV_TOKEN}}  # set in repository settings
-          file: ./coverage.txt  # file from the previous step
+          files: ./coverage.txt,./benchmark.txt   # file from the previous step
           fail_ci_if_error: false
-
-      - name: Go Benchmark
-        run: go test -v -shuffle=on -run=- -bench=. -benchtime=1x ./...
