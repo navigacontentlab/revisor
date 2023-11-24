@@ -10,7 +10,7 @@ jobs:
   run:
     strategy:
       matrix:
-        go: [ ${{ vars.$GO_VERSION }} ]
+        go: [ ${{ vars.GO_VERSION }} ]
     name: Verify Code
     runs-on: ubuntu-latest
     steps:
