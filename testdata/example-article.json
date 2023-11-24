@@ -1,0 +1,288 @@
+{
+  "uuid": "affd4b2e-9709-45a7-a668-3abea1e1eac6",
+  "type": "x-im/article",
+  "uri": "im://article/6a7a0320-5d4c-4c6d-9fc1-d4d0a3972f1e",
+  "title": "Muotoillun kuvatekstin testaaminen",
+  "created": "2022-05-09T06:18:50.707Z",
+  "modified": "2022-05-09T09:54:20Z",
+  "published": "2022-05-09T06:21:30.941Z",
+  "content": [
+    {
+      "id": "MjQ1LDg0LDM0LDI0NQ",
+      "type": "madmansrow",
+      "data": {
+        "format": "html"
+      }
+    },
+    {
+      "id": "NzUsMjQ2LDIwOCwxNTE",
+      "type": "x-im/header",
+      "data": {
+        "format": "html",
+        "text": "Muotoillun kuvatekstin testaaminen"
+      }
+    },
+    {
+      "id": "preamble-a516335827925ef7573589968e87e6ed",
+      "type": "preamble",
+      "data": {
+        "format": "html",
+        "text": "Ingerssi"
+      }
+    },
+    {
+      "id": "table-a1a6cb5240638620900dae3eef50ef02",
+      "type": "x-im/table",
+      "data": {
+        "caption": "Table caption",
+        "meta": "Some meta",
+        "tbody": "\n                                \u003ctr\u003e\n                                    \u003ctd id\u003d\"table-cell-67af12631b43e019f18be43e4cbac24f\"\u003eCell:\n                                        a1\n                                    \u003c/td\u003e\n                                    \u003ctd id\u003d\"table-cell-0120a5fba822b6e311c782c0cb22ef21\"\u003eCell:\n                                        b1\n                                    \u003c/td\u003e\n                                    \u003ctd id\u003d\"table-cell-0a961e037cacccd5b394971c4f2f27f2\"\u003eCell:\n                                        c1\n                                    \u003c/td\u003e\n                                \u003c/tr\u003e\n                                \u003ctr\u003e\n                                    \u003ctd id\u003d\"table-cell-68ee8e4a647defcae8febe6bcab09280\"\u003eCell:\n                                        a2\n                                    \u003c/td\u003e\n                                    \u003ctd id\u003d\"table-cell-7765eb2f4cd93c137ff1aca08de2d443\"\u003eCell:\n                                        b2\n                                    \u003c/td\u003e\n                                    \u003ctd id\u003d\"table-cell-e94c7fc89be1222228b472cacc5dc2f5\"\u003e<em>Cell</em>:\n                                        c2\n                                    \u003c/td\u003e\n                                \u003c/tr\u003e\n                                \u003ctr\u003e\n                                    \u003ctd id\u003d\"table-cell-d0c7547e8944246c5754bdbd3b9dd587\"/\u003e\n                                    \u003ctd id\u003d\"table-cell-e4f7d02fe0b9d9652d1c368277bf8364\"/\u003e\n                                    \u003ctd id\u003d\"table-cell-042ca7cbdefef5bedccd557941d769d1\"/\u003e\n                                \u003c/tr\u003e\n                            ",
+        "thead": "\n                                \u003ctr\u003e\n                                    \u003cth id\u003d\"table-cell-40956d95dfd217e74de876e83de790de\"\u003eh1\u003c/th\u003e\n                                    \u003cth id\u003d\"table-cell-94746c333ba236f128e5b6c040612754\"\u003eh2\u003c/th\u003e\n                                    \u003cth id\u003d\"table-cell-a79792053d6d61d3a00d6947e5dcf561\"\u003eh3\u003c/th\u003e\n                                    \u003cth id\u003d\"table-cell-891c844687c381d02c87c0883126c22d\"\u003eh4\u003c/th\u003e\n                                    \u003cth id\u003d\"table-cell-4657791442f6f459a33859704028a4f5\"\u003eh5\u003c/th\u003e\n                                    \u003cth id\u003d\"table-cell-95b1469c89830dd4cb90a3684db6d259\"\u003eh6\u003c/th\u003e\n                                \u003c/tr\u003e\n                            "
+      }
+    },
+    {
+      "id": "MjEwLDQyLDI3LDgy",
+      "type": "x-im/paragraph",
+      "data": {
+        "format": "html",
+        "text": "Teksti tässä <personTag id=\"123\">John</personTag>."
+      }
+    },
+    {
+      "id": "MTYxLDE2OSw1Nyw3MQ",
+      "uuid": "e8e3c50a-57ec-4af3-b8ef-b700c662e797",
+      "type": "x-im/content-part",
+      "data": {
+        "factbox-caption": "\u003cstrong id=\"strong-611caf096ad9b2398344af451cea5de2\"\u003eLexus\u003c/strong\u003e \u003cem id=\"emphasis-18dafa375c267e74f80db455a9610bf2\"\u003eNX 450h\u003c/em\u003e",
+        "photographer": "\u003cstrong id=\"strong-628801f153e81760873e7ece8ee0bd95\"\u003eKimmo\u003c/strong\u003e Taskinen"
+      },
+      "links": [
+        {
+          "uuid": "0973cf89-f6cd-54e8-9141-c606aad4c5b3",
+          "uri": "im://image/JK6gqMQfa2xS_mrRhAio-BDwl7k.jpg",
+          "type": "x-im/image",
+          "data": {
+            "height": "3193",
+            "width": "6011"
+          },
+          "rel": "image"
+        },
+        {
+          "uri": "im://content-part/factBox",
+          "rel": "content-part"
+        }
+      ],
+      "content": [
+        {
+          "id": "paragraph-4392fd24f109e02809e95127268d384f",
+          "type": "x-im/paragraph",
+          "data": {
+            "format": "html",
+            "text": "Faktan teksti."
+          }
+        }
+      ]
+    }
+  ],
+  "meta": [
+    {
+      "id": "MTE4LDM5LDEwMCwxOTA",
+      "type": "x-smf-sndp/tag",
+      "data": {
+        "contentRepoId": "2000005976678",
+        "resourceSubtype": "company",
+        "selectedTimestamp": "1652088637077",
+        "title": "STT Uutiset"
+      }
+    },
+    {
+      "id": "MTEwLDI1MywyMjcsMTIw",
+      "type": "x-im/teaser",
+      "data": {
+        "caption": "Harvinainen \u003cem id=\"emphasis-3f5449db5843f03c6be56aad6ad99a66\"\u003elautanen\u003c/em\u003e Venäjän \u003cstrong id=\"strong-eb131d689b44a37a052041c452e7bc70\"\u003eruhtinaskunnan\u003c/strong\u003e ajalta",
+        "photographer": "Tiiu \u003cstrong id=\"strong-abd916874a2e91f351f826215efb46f0\"\u003eKaitalo\u003c/strong\u003e"
+      },
+      "links": [
+        {
+          "uuid": "a389711f-e626-5b51-8b73-131f57447791",
+          "uri": "im://image/jAqZ9lytqvFHSFbYSG5ZUeQ9xVc.jpg",
+          "type": "x-im/image",
+          "data": {
+            "height": "1560",
+            "width": "1170"
+          },
+          "rel": "image"
+        }
+      ]
+    },
+    {
+      "id": "MTE0LDE3Myw2MSwxNTY",
+      "type": "x-im/listing-teaser"
+    }
+  ],
+  "links": [
+    {
+      "uri": "imid://organisation/example",
+      "type": "x-imid/organisation",
+      "title": "example",
+      "rel": "shared-with",
+      "links": [
+        {
+          "uri": "imid://unit/test",
+          "type": "x-imid/unit",
+          "title": "test",
+          "rel": "shared-with"
+        }
+      ]
+    },
+    {
+      "uri": "im://resourceType/article",
+      "type": "x-im/resourceType",
+      "title": "Artikkeli",
+      "rel": "resourceType"
+    },
+    {
+      "uri": "im://template/M",
+      "type": "x-im/template",
+      "title": "M",
+      "rel": "template"
+    },
+    {
+      "uri": "im://commentingVisible/true",
+      "type": "x-im/commentingVisible",
+      "title": "Näytä kommentointi",
+      "rel": "commentingVisible"
+    },
+    {
+      "uri": "im://commentingMode/realname",
+      "type": "x-im/commentingMode",
+      "title": "Vain omalla nimellä",
+      "rel": "commentingMode"
+    },
+    {
+      "uri": "imid://user/sub/123e9a4b-438b-4f85-b966-9ddc3ad78717",
+      "type": "x-imid/user",
+      "title": "John Doe",
+      "rel": "creator",
+      "links": [
+        {
+          "uri": "imid://organisation/example",
+          "type": "x-imid/organisation",
+          "title": "example",
+          "rel": "affiliation",
+          "links": [
+            {
+              "uri": "imid://unit/test",
+              "type": "x-imid/unit",
+              "title": "test",
+              "rel": "affiliation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "baad1af2-12b0-4e6b-9f9e-766a63a54c58",
+      "type": "x-im/assignment",
+      "rel": "assignment"
+    },
+    {
+      "uuid": "9ed6a70c-b64d-4bea-ab25-7329a35571b0",
+      "type": "x-im/author",
+      "title": "John Doe",
+      "data": {
+        "email": "John.Doe@example.com",
+        "firstName": "John",
+        "lastName": "Doe"
+      },
+      "rel": "author"
+    },
+    {
+      "uuid": "7bc17363-fd8a-4ccc-affa-b303d0820e44",
+      "type": "x-im/channel",
+      "title": "Test",
+      "rel": "channel"
+    },
+    {
+      "uuid": "13ff9b0a-0c4c-44fd-aaa9-2fbcabe84dbd",
+      "type": "x-im/section",
+      "title": "AL: Pirkanmaa",
+      "rel": "section",
+      "links": [
+        {
+          "uuid": "98060b06-0e18-4581-91be-2142e4441342",
+          "type": "x-im/section",
+          "title": "AL: Uutiset",
+          "rel": "broader"
+        },
+        {
+          "uuid": "d33e04b7-7afe-4358-98d6-7c4300065614",
+          "type": "x-im/channel",
+          "title": "AL",
+          "rel": "associated-with"
+        }
+      ]
+    },
+    {
+      "uuid": "eaecf71a-1070-4077-80d3-af29351f3fb6",
+      "type": "x-im/section",
+      "title": "Test: Kotimaa",
+      "rel": "subject"
+    },
+    {
+      "uuid": "9045e270-f666-4360-a04d-91cb3f97d304",
+      "type": "x-im/content-profile",
+      "title": "Oletus",
+      "rel": "subject"
+    },
+    {
+      "uri": "im://content-size/article/S",
+      "type": "x-im/contentsize",
+      "title": "S",
+      "rel": "content-size"
+    },
+    {
+      "uri": "imid://user/sub/123e9a4b-438b-4f85-b966-9ddc3ad78717",
+      "type": "x-imid/user",
+      "title": "John Doe",
+      "rel": "updater",
+      "links": [
+        {
+          "uri": "imid://organisation/example",
+          "type": "x-imid/organisation",
+          "title": "example",
+          "rel": "affiliation",
+          "links": [
+            {
+              "uri": "imid://unit/test",
+              "type": "x-imid/unit",
+              "title": "test",
+              "rel": "affiliation"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "imext:haspublishedversion",
+      "value": "false"
+    },
+    {
+      "name": "x-smf/newsSource",
+      "value": "Test"
+    },
+    {
+      "name": "x-smf/originalPublishingChannel",
+      "value": "7bc17363-fd8a-4ccc-affa-b303d0820e44"
+    },
+    {
+      "name": "x-smf/originalPublishingChannelName",
+      "value": "Test"
+    }
+  ],
+  "language": "fi-FI",
+  "status": "done",
+  "provider": "InfomakerConfig"
+}
