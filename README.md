@@ -401,3 +401,8 @@ ValidateDocument     1.05k ± 0%     0.59k ± 0%  -43.48%  (p=0.008 n=5+5)
 ### Fuzz tests
 
 There are two fuzz targets in the project: `FuzzValidationWide` that allows fuzzing of the document and two constraint sets. It will load the naviga constraints, the example organisation constraints, and all documents in "./testdata/" and add them as fuzzing seeds. `FuzzValidationConstraints` adds all constraint sets from the "./constraints/" and adds them as fuzzing seeds. The fuzzing operation is then done against all documents in "./testdata/".
+
+### Start WebAssembly Server
+``` bash
+go run cmd/server-wasm/main.go serve-wasm
+```
