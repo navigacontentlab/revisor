@@ -1,4 +1,4 @@
-name: Verify code
+name: Lint code
 
 on:
   push:
@@ -20,14 +20,8 @@ jobs:
           go-version: ${{ matrix.go }}
           check-latest: true
 
-      - name: Go Format
-        run: gofmt -s -w . && git diff --exit-code
-
-      - name: Go Tidy
-        run: go mod tidy && git diff --exit-code
-
-      - name: Go Mod
-        run: go mod download
-
-      - name: Go Mod Verify
-        run: go mod verify
+      - name: GolangCI-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.55
+          args: --timeout=4m
