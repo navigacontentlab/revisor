@@ -1,7 +1,5 @@
 name: Verify code
 
-run-name: ${{ github.event_name }} - verify
-
 on:
   push:
     branches: [main, feature/*]
