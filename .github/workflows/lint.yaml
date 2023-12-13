@@ -1,0 +1,27 @@
+name: Lint code
+
+on:
+  push:
+    branches: [main, feature/*]
+permissions:
+  contents: read
+
+jobs:
+  run:
+    strategy:
+      matrix:
+        go: [ '1.21' ]
+    name: Lint Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go }}
+          check-latest: true
+
+      - name: GolangCI-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.55
+          args: --timeout=4m

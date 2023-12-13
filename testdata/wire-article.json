@@ -393,6 +393,24 @@
           "rel": "self"
         }
       ]
+    },
+    {
+      "id": "imagelink",
+      "uuid": "6ab08348-81ac-51f5-a856-60f9d220d646",
+      "url": "http://naviga.jpg",
+      "type": "x-im/imagelink",
+      "links": [
+        {
+          "uuid": "6ab08348-81ac-51f5-a856-60f9d220d646",
+          "url": "http://naviga.jpg",
+          "type": "x-im/imagelink",
+          "data": {
+            "height": "3840",
+            "width": "5475"
+          },
+          "rel": "self"
+        }
+      ]
     }
   ],
   "meta": [
@@ -419,6 +437,16 @@
           "uuid": "53d33e6d-c22e-500f-885e-cf4002254e52",
           "uri": "im://image/hAmZukwweCFpfdn2P_MN3dHUBm4.jpg",
           "type": "x-im/image",
+          "data": {
+            "height": "3697",
+            "width": "5627"
+          },
+          "rel": "image"
+        },
+        {
+          "uuid": "53d33e6d-c22e-500f-885e-cf4002254e52",
+          "url": "http://naviga.jpg",
+          "type": "x-im/imagelink",
           "data": {
             "height": "3697",
             "width": "5627"

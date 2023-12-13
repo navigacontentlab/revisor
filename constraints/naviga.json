@@ -289,6 +289,52 @@
           "maxCount": 1
         }
       }
+    },
+    {
+      "declares": "x-im/imagelink",
+      "attributes": {
+        "uri": {},
+        "url": {}
+      },
+      "meta": [
+        {
+          "declares": {"type":"x-im/imagelink"},
+          "count": 1,
+          "data": {
+            "width": {"format": "int",
+              "optional": true
+            },
+            "height": {"format": "int",
+              "optional": true
+            },
+            "text": {"optional":true},
+            "credit": {"optional":true},
+            "objectName": {"optional":true},
+            "instructions": {"optional":true},
+            "source": {"optional":true},
+            "photoDate": {
+              "format": "RFC3339",
+              "allowEmpty": true,
+              "optional": true
+            },
+            "copyright": {"optional":true},
+            "mimeType": {"optional":true}
+          }
+        }
+      ],
+      "links": [
+        {
+          "declares": {"rel":"source"},
+          "description": "External source (if any)",
+          "maxCount": 1
+        }
+      ],
+      "properties": {
+        "filename": {
+          "value": {},
+          "maxCount": 1
+        }
+      }
     }
   ],
   "meta": [
@@ -346,6 +392,19 @@
               }
             }
           ]
+        },
+        {
+          "declares": {"rel":"image", "type":"x-im/imagelink"},
+          "attributes": {
+            "uuid": {},
+            "uri": {},
+            "url": {}
+          },
+          "data": {
+            "height": {"format":"int"},
+            "width": {"format":"int"},
+            "imageInstructions": {"optional":true}
+          }
         }
       ]
     },
@@ -928,10 +987,6 @@
     "conceptid": {
       "parameters": {
         "uri": {},
-        "created": {
-          "allowEmpty": true,
-          "optional": true
-        },
         "created": {
           "allowEmpty": true,
           "optional": true,

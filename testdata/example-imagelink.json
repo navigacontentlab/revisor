@@ -1,0 +1,32 @@
+{
+  "uuid": "579aecb6-83cd-5749-9e56-e6b6045f0823",
+  "type": "x-im/imagelink",
+  "uri": "im://image/HoPhThCxqrskOvzqoUguBF15L0g.jpg",
+  "created": "2022-05-05T11:05:59.30010891Z",
+  "modified": "2022-05-05T11:05:59.30010891Z",
+  "meta": [
+    {
+      "type": "x-im/imagelink",
+      "data": {
+        "copyright": "EXAMPLE",
+        "height": "3297",
+        "width": "4946",
+        "mimeType": "image/jpeg",
+        "objectName": "78ae858b-fcea-4f18-b59a-a02307fac023.jpg",
+        "photoDate": "2020-10-15T05:10:17.093Z",
+        "photoDateTime": "2020-10-15T05:10:17.093Z"
+      }
+    }
+  ],
+  "links": [
+
+  ],
+  "properties": [
+    {
+      "name": "filename",
+      "value": "HoPhThCxqrskOvzqoUguBF15L0g.jpg"
+    }
+  ],
+  "status": "draft",
+  "provider": "NavigaPhotos"
+}
