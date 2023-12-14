@@ -42,20 +42,20 @@ func NewValidator(
 		v.attributeConstraints = append(v.attributeConstraints, constraint.Attributes)
 
 		for j := range constraint.Documents {
-			doc := constraint.Documents[j]
+			d := constraint.Documents[j]
 
-			v.documents = append(v.documents, &doc)
+			v.documents = append(v.documents, &d)
 
-			if doc.Declares == "" {
+			if d.Declares == "" {
 				continue
 			}
 
-			if docDeclared[doc.Declares] {
+			if docDeclared[d.Declares] {
 				return nil, fmt.Errorf("document type %q redeclared in %q",
-					doc.Declares, constraint.Name)
+					d.Declares, constraint.Name)
 			}
 
-			docDeclared[doc.Declares] = true
+			docDeclared[d.Declares] = true
 		}
 
 		err = policySet.Add(constraint.Name, constraint.HTMLPolicies...)
@@ -589,11 +589,11 @@ func (cs ConstraintSet) Validate() error {
 		return err
 	}
 
-	for i, doc := range cs.Documents {
+	for i, d := range cs.Documents {
 		err := validateBlockConstraints(map[string][]*BlockConstraint{
-			"link":    doc.Links,
-			"meta":    doc.Meta,
-			"content": doc.Content,
+			"link":    d.Links,
+			"meta":    d.Meta,
+			"content": d.Content,
 		})
 		if err != nil {
 			return fmt.Errorf("document %d: %w", i+1, err)

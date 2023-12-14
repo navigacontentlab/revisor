@@ -83,21 +83,21 @@ func loadConstraints(
 	}
 
 	for _, source := range sources {
-		var constraints revisor.ConstraintSet
+		var co revisor.ConstraintSet
 
 		ref, loader, err := constraintLoader(source)
 		if err != nil {
 			return nil, err
 		}
 
-		err = loader(ref, &constraints)
+		err = loader(ref, &co)
 		if err != nil {
 			return nil, fmt.Errorf(
 				"failed to load constraints from %q: %w",
 				source, err)
 		}
 
-		list = append(list, constraints)
+		list = append(list, co)
 	}
 
 	return list, nil
