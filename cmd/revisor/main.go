@@ -39,10 +39,6 @@ func main() {
 						Usage: "use the embedded naviga spec",
 						Value: true,
 					},
-					&cli.StringFlag{
-						Name:  "listen",
-						Usage: "an address (f.ex. :8080) to expose the validation API on",
-					},
 				},
 			},
 			{
@@ -87,21 +83,21 @@ func loadConstraints(
 	}
 
 	for _, source := range sources {
-		var constraints revisor.ConstraintSet
+		var co revisor.ConstraintSet
 
 		ref, loader, err := constraintLoader(source)
 		if err != nil {
 			return nil, err
 		}
 
-		err = loader(ref, &constraints)
+		err = loader(ref, &co)
 		if err != nil {
 			return nil, fmt.Errorf(
 				"failed to load constraints from %q: %w",
 				source, err)
 		}
 
-		list = append(list, constraints)
+		list = append(list, co)
 	}
 
 	return list, nil
@@ -130,12 +126,12 @@ func serveCommand(c *cli.Context) error {
 	specs := c.StringSlice("spec")
 	navigaSpec := c.Bool("naviga-spec")
 
-	constraints, err := loadConstraints(navigaSpec, specs...)
+	co, err := loadConstraints(navigaSpec, specs...)
 	if err != nil {
 		return err
 	}
 
-	validator, err := revisor.NewValidator(constraints...)
+	validator, err := revisor.NewValidator(co...)
 	if err != nil {
 		return fmt.Errorf("failed to create validator: %w", err)
 	}
@@ -171,20 +167,20 @@ func serveCommand(c *cli.Context) error {
 			return
 		}
 
-		errors := validator.ValidateDocument(&d)
-		sort.Slice(errors, func(i, j int) bool {
-			return errors[i].String() < errors[j].String()
+		e := validator.ValidateDocument(&d)
+		sort.Slice(e, func(i, j int) bool {
+			return e[i].String() < e[j].String()
 		})
 
 		// Empty slice looks much better than "null".
-		if errors == nil {
-			errors = make([]revisor.ValidationResult, 0)
+		if e == nil {
+			e = make([]revisor.ValidationResult, 0)
 		}
 
 		enc := json.NewEncoder(w)
 		enc.SetIndent("", "  ")
 
-		err = enc.Encode(errors)
+		err = enc.Encode(e)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			_, _ = w.Write([]byte(err.Error()))
@@ -212,12 +208,12 @@ func documentCommand(c *cli.Context) error {
 	specs := c.StringSlice("spec")
 	navigaSpec := c.Bool("naviga-spec")
 
-	constraints, err := loadConstraints(navigaSpec, specs...)
+	co, err := loadConstraints(navigaSpec, specs...)
 	if err != nil {
 		return err
 	}
 
-	validator, err := revisor.NewValidator(constraints...)
+	validator, err := revisor.NewValidator(co...)
 	if err != nil {
 		return fmt.Errorf("failed to create validator: %w", err)
 	}
@@ -238,27 +234,27 @@ func documentCommand(c *cli.Context) error {
 				path, err)
 		}
 
-		errors := validator.ValidateDocument(&d)
+		e := validator.ValidateDocument(&d)
 
 		switch {
 		case jsonOut:
-			sort.Slice(errors, func(i, j int) bool {
-				return errors[i].String() < errors[j].String()
+			sort.Slice(e, func(i, j int) bool {
+				return e[i].String() < e[j].String()
 			})
 
-			_ = enc.Encode(errors)
+			_ = enc.Encode(e)
 
 		default:
-			if len(errors) > 0 {
+			if len(e) > 0 {
 				fmt.Fprintln(os.Stdout, d.UUID, d.Type, "==>")
 			}
 
-			for _, problem := range errors {
+			for _, problem := range e {
 				fmt.Fprintln(os.Stdout, problem.String())
 			}
 		}
 
-		hasErrors = hasErrors || len(errors) > 0
+		hasErrors = hasErrors || len(e) > 0
 	}
 
 	if hasErrors {

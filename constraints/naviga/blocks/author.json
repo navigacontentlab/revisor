@@ -27,9 +27,6 @@
 	    "type": "object",
 	    "additionalProperties": false,
 	    "properties": {
-		"email": {
-		    "type": "string"
-		},
 		"shortDescription": {
 		    "type": "string"
 		},

@@ -1,0 +1,33 @@
+name: Verify code
+
+on:
+  push:
+    branches: [main, feature/*]
+permissions:
+  contents: read
+
+jobs:
+  run:
+    strategy:
+      matrix:
+        go: [ '1.21' ]
+    name: Verify Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go }}
+          check-latest: true
+
+      - name: Go Format
+        run: gofmt -s -w . && git diff --exit-code
+
+      - name: Go Tidy
+        run: go mod tidy && git diff --exit-code
+
+      - name: Go Mod
+        run: go mod download
+
+      - name: Go Mod Verify
+        run: go mod verify

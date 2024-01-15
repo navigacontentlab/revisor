@@ -346,6 +346,18 @@
               }
             }
           ]
+        },
+        {
+          "declares": {"type":"x-im/imagelink"},
+          "attributes": {
+            "uuid": {},
+            "uri": {},
+            "url": {}
+          },
+          "data": {
+            "height": {"format":"int"},
+            "width": {"format":"int"}
+          }
         }
       ]
     },
@@ -391,6 +403,18 @@
           "attributes": {
             "uuid": {},
             "uri": {"glob":["im://image/*"]}
+          },
+          "data": {
+            "width": {"format":"int"},
+            "height": {"format":"int"}
+          }
+        },
+        {
+          "declares": {"rel":"self", "type":"x-im/imagelink"},
+          "attributes": {
+            "uuid": {},
+            "url": {},
+            "uri": {}
           },
           "data": {
             "width": {"format":"int"},
@@ -702,6 +726,30 @@
           ]
         }
       ]
+    },
+    {
+      "declares": {"type": "x-im/imagelink"},
+      "attributes": {
+        "uuid": {},
+        "uri": {},
+        "url": {}
+      },
+      "links": [
+        {
+          "declares": {"rel":"self"},
+          "count": 1,
+          "attributes": {
+            "uuid": {"template":"{{.parent.uuid}}"},
+            "uri": {},
+            "url": {},
+            "type": {"const":"x-im/imagelink"}
+          },
+          "data": {
+            "width": {"format": "int"},
+            "height": {"format": "int"}
+          }
+        }
+      ]
     }
   ],
   "links": [
@@ -928,10 +976,6 @@
     "conceptid": {
       "parameters": {
         "uri": {},
-        "created": {
-          "allowEmpty": true,
-          "optional": true
-        },
         "created": {
           "allowEmpty": true,
           "optional": true,

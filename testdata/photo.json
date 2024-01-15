@@ -8,12 +8,12 @@
     {
       "type": "x-im/image",
       "data": {
-	"filename": "freestocks-YXyTlLrSVs0-unsplash.jpg",
-	"height": "3648",
-	"mimeType": "image/jpeg",
-	"objectName": "freestocks-YXyTlLrSVs0-unsplash.jpg",
-	"originalFilename": "freestocks-YXyTlLrSVs0-unsplash.jpg",
-	"width": "5472"
+        "filename": "freestocks-YXyTlLrSVs0-unsplash.jpg",
+        "height": "3648",
+        "mimeType": "image/jpeg",
+        "objectName": "freestocks-YXyTlLrSVs0-unsplash.jpg",
+        "originalFilename": "freestocks-YXyTlLrSVs0-unsplash.jpg",
+        "width": "5472"
       }
     }
   ],
@@ -24,18 +24,18 @@
       "title": "stuffltd",
       "rel": "shared-with",
       "links": [
-	{
-	  "uri": "imid://organisation/editorial",
-	  "type": "x-imid/unit",
-	  "title": "editorial",
-	  "rel": "shared-with"
-	},
-	{
-	  "uri": "imid://organisation/commercial",
-	  "type": "x-imid/unit",
-	  "title": "commercial",
-	  "rel": "shared-with"
-	}
+        {
+          "uri": "imid://organisation/editorial",
+          "type": "x-imid/unit",
+          "title": "editorial",
+          "rel": "shared-with"
+        },
+        {
+          "uri": "imid://organisation/commercial",
+          "type": "x-imid/unit",
+          "title": "commercial",
+          "rel": "shared-with"
+        }
       ]
     },
     {
@@ -48,20 +48,20 @@
       "title": "Hugo Wetterberg",
       "rel": "creator",
       "links": [
-	{
-	  "uri": "imid://organisation/stuffltd",
-	  "type": "x-imid/organisation",
-	  "title": "stuffltd",
-	  "rel": "affiliation",
-	  "links": [
-	    {
-	      "uri": "imid://unit/stuff",
-	      "type": "x-imid/unit",
-	      "title": "stuff",
-	      "rel": "affiliation"
-	    }
-	  ]
-	}
+        {
+          "uri": "imid://organisation/stuffltd",
+          "type": "x-imid/organisation",
+          "title": "stuffltd",
+          "rel": "affiliation",
+          "links": [
+            {
+              "uri": "imid://unit/stuff",
+              "type": "x-imid/unit",
+              "title": "stuff",
+              "rel": "affiliation"
+            }
+          ]
+        }
       ]
     },
     {
@@ -70,20 +70,20 @@
       "title": "Hugo Wetterberg",
       "rel": "updater",
       "links": [
-	{
-	  "uri": "imid://organisation/stuffltd",
-	  "type": "x-imid/organisation",
-	  "title": "stuffltd",
-	  "rel": "affiliation",
-	  "links": [
-	    {
-	      "uri": "imid://unit/stuff",
-	      "type": "x-imid/unit",
-	      "title": "stuff",
-	      "rel": "affiliation"
-	    }
-	  ]
-	}
+        {
+          "uri": "imid://organisation/stuffltd",
+          "type": "x-imid/organisation",
+          "title": "stuffltd",
+          "rel": "affiliation",
+          "links": [
+            {
+              "uri": "imid://unit/stuff",
+              "type": "x-imid/unit",
+              "title": "stuff",
+              "rel": "affiliation"
+            }
+          ]
+        }
       ]
     }
   ],
