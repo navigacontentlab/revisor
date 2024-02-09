@@ -82,6 +82,20 @@
           }
         }
       ]
+    },
+    {
+      "id": "file-library-24ded217ae173f18d4e8aed389f6853d",
+      "uuid": "30ce4ea8-3301-4602-92f8-2593eca71df3",
+      "type": "x-im/file-library",
+      "title": "Booking Office.doc",
+      "links": [
+        {
+          "uuid": "30ce4ea8-3301-4602-92f8-2593eca71df3",
+          "url": "https://qa-i-filelib.s3.eu-west-1.amazonaws.com/OC-test%2FBooking%20Office.doc",
+          "type": "x-im/file-library",
+          "rel": "self"
+        }
+      ]
     }
   ],
   "meta": [

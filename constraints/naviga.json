@@ -750,6 +750,26 @@
           }
         }
       ]
+    },
+    {
+      "declares": {"type": "x-im/file-library"},
+      "attributes": {
+        "uuid": {},
+        "title": {}
+      },
+      "links": [
+        {
+          "declares": {"rel":"self"},
+          "count": 1,
+          "attributes": {
+            "uuid": {"template":"{{.parent.uuid}}"},
+            "url": {
+              "allowEmpty": false
+            },
+            "type": {"const":"x-im/file-library"}
+          }
+        }
+      ]
     }
   ],
   "links": [
