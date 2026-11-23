@@ -232,6 +232,13 @@
           }
         },
         {
+          "declares": {"rel":"mainchannel", "type":"x-im/channel"},
+          "attributes": {
+            "uuid": {},
+            "title": {}
+          }
+        },
+        {
           "declares": {"rel":"content-size", "type":"x-im/contentsize"},
           "attributes": {
             "uri": {"glob":["im://content-size/article/*"]},

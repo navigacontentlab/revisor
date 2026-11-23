@@ -2,7 +2,7 @@
   "uuid": "3f0c6a52-6d0e-4d2b-9f3e-2b7f0c1a9e11",
   "type": "x-im/article",
   "uri": "im://article/3f0c6a52-6d0e-4d2b-9f3e-2b7f0c1a9e11",
-  "title": "A fact box as Writer stores it",
+  "title": "A fact box and channels as Writer stores them",
   "created": "2026-11-23T15:00:00Z",
   "modified": "2026-11-23T15:00:00Z",
   "language": "en-US",
@@ -41,6 +41,20 @@
           }
         }
       ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "mainchannel",
+      "title": "Channel nav",
+      "type": "x-im/channel",
+      "uuid": "c0cabd37-c2c1-4792-85f0-75492bea587b"
+    },
+    {
+      "rel": "channel",
+      "title": "Channel im",
+      "type": "x-im/channel",
+      "uuid": "90a0891b-2804-4c89-9515-d042c2f23e18"
     }
   ],
   "properties": [
