@@ -389,7 +389,8 @@
     {
       "declares": {"type": "x-im/content-part"},
       "attributes": {
-        "uuid": {"optional": true}
+        "uuid": {"optional": true},
+        "title": {"optional": true}
       },
       "links": [
         {
@@ -423,6 +424,8 @@
         }
       ],
       "data": {
+        "title": {"optional": true},
+        "subject": {"optional": true},
         "factbox-caption": {
           "optional": true,
           "format": "html"

@@ -1,0 +1,52 @@
+{
+  "uuid": "3f0c6a52-6d0e-4d2b-9f3e-2b7f0c1a9e11",
+  "type": "x-im/article",
+  "uri": "im://article/3f0c6a52-6d0e-4d2b-9f3e-2b7f0c1a9e11",
+  "title": "A fact box as Writer stores it",
+  "created": "2026-11-23T15:00:00Z",
+  "modified": "2026-11-23T15:00:00Z",
+  "language": "en-US",
+  "status": "draft",
+  "content": [
+    {
+      "id": "headline-0",
+      "type": "x-im/header",
+      "data": {
+        "format": "html",
+        "text": "A fact box as Writer stores it"
+      }
+    },
+    {
+      "id": "MTkxLDI0OSwxNDUsNDY",
+      "uuid": "4e9cb384-a8dd-466a-aea5-d95c27ac3b8f",
+      "type": "x-im/content-part",
+      "title": "The cycle path",
+      "data": {
+        "subject": "Facts",
+        "title": "The cycle path"
+      },
+      "links": [
+        {
+          "uri": "im://content-part/fact",
+          "rel": "content-part"
+        }
+      ],
+      "content": [
+        {
+          "id": "paragraph-6cfe8c66d0b08aa5b852c0461b099880",
+          "type": "x-im/paragraph",
+          "data": {
+            "format": "html",
+            "text": "Length: 2.1 kilometres."
+          }
+        }
+      ]
+    }
+  ],
+  "properties": [
+    {
+      "name": "imext:haspublishedversion",
+      "value": "false"
+    }
+  ]
+}
