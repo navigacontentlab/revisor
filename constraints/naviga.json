@@ -232,6 +232,13 @@
           }
         },
         {
+          "declares": {"rel":"mainchannel", "type":"x-im/channel"},
+          "attributes": {
+            "uuid": {},
+            "title": {}
+          }
+        },
+        {
           "declares": {"rel":"content-size", "type":"x-im/contentsize"},
           "attributes": {
             "uri": {"glob":["im://content-size/article/*"]},
@@ -299,6 +306,8 @@
       },
       "data": {
         "text": {"optional":true},
+        "title": {"optional":true},
+        "subject": {"optional":true},
         "caption": {"optional":true},
         "photographer": {"optional":true}
       }
@@ -389,7 +398,8 @@
     {
       "declares": {"type": "x-im/content-part"},
       "attributes": {
-        "uuid": {"optional": true}
+        "uuid": {"optional": true},
+        "title": {"optional": true}
       },
       "links": [
         {
@@ -423,6 +433,8 @@
         }
       ],
       "data": {
+        "title": {"optional": true},
+        "subject": {"optional": true},
         "factbox-caption": {
           "optional": true,
           "format": "html"
@@ -450,6 +462,41 @@
           }
         }
       ]
+    },
+    {
+      "declares": {"type": "x-im/ordered-list"},
+      "data": {
+        "format": {"const":"html"}
+      },
+      "content": [
+        {
+          "declares": {"type":"x-im/paragraph"},
+          "data": {
+            "format": {"const":"html"},
+            "text": {
+              "optional": true,
+              "format": "html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "declares": {"type": "blockquote"},
+      "data": {
+        "format": {"const":"html"},
+        "text": {
+          "optional": true,
+          "format": "html"
+        }
+      }
+    },
+    {
+      "declares": {"type": "x-im/mapembed"},
+      "data": {
+        "geometry": {},
+        "zoom": {"format":"int", "optional": true}
+      }
     },
     {
       "declares": {"type": "x-im/htmlembed"},
@@ -537,6 +584,28 @@
             "allowEmpty": true,
             "format": "html"
           }
+      }
+    },
+    {
+      "declares": {"type": "drophead"},
+      "data": {
+        "format": {"const":"html"},
+        "text": {
+          "optional": true,
+          "allowEmpty": true,
+          "format": "html"
+        }
+      }
+    },
+    {
+      "declares": {"type": "pagedateline"},
+      "data": {
+        "format": {"const":"html"},
+        "text": {
+          "optional": true,
+          "allowEmpty": true,
+          "format": "html"
+        }
       }
     },
     {
@@ -672,6 +741,13 @@
           "data": {
             "context": {},
             "provider": {}
+          }
+        },
+        {
+          "declares": {"rel":"alternate", "type":"image/jpg"},
+          "maxCount": 1,
+          "attributes": {
+            "url": {"glob":["https://i.ytimg.com/vi/**"]}
           }
         }
       ]

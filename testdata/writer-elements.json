@@ -1,0 +1,191 @@
+{
+  "uuid": "6d1f0c2e-8b3a-4f5d-9c7e-2a4b6c8d0e1f",
+  "type": "x-im/article",
+  "uri": "im://article/6d1f0c2e-8b3a-4f5d-9c7e-2a4b6c8d0e1f",
+  "title": "Writer's drophead, page dateline, lists, quote, map, table, HTML, YouTube and teaser as tryout's Writer saves them",
+  "language": "en-US",
+  "status": "draft",
+  "content": [
+    {
+      "id": "d103e26-headline",
+      "type": "x-im/header",
+      "data": {
+        "format": "html",
+        "text": "Kane sidelined by ankle injury"
+      }
+    },
+    {
+      "id": "drophead-b4bc64064c9691895b0744109efb3df7",
+      "type": "drophead",
+      "data": {
+        "format": "html",
+        "text": "Drophead"
+      }
+    },
+    {
+      "id": "pagedateline-92fa39315d41eb1cc3199b3ebf960605",
+      "type": "pagedateline",
+      "data": {
+        "format": "html",
+        "text": "Pagedateline"
+      }
+    },
+    {
+      "id": "list-b18fb7b022a8f95fefcfdb3c366df8a5",
+      "type": "x-im/unordered-list",
+      "data": {
+        "format": "html"
+      },
+      "content": [
+        {
+          "type": "x-im/paragraph",
+          "data": {
+            "format": "html",
+            "text": "Unordred list"
+          }
+        }
+      ]
+    },
+    {
+      "id": "list-2db236e7761a4e8b2b1acd0a931c9759",
+      "type": "x-im/ordered-list",
+      "data": {
+        "format": "html"
+      },
+      "content": [
+        {
+          "type": "x-im/paragraph",
+          "data": {
+            "format": "html",
+            "text": "Ordered list"
+          }
+        },
+        {
+          "type": "x-im/paragraph",
+          "data": {
+            "format": "html",
+            "text": "two"
+          }
+        }
+      ]
+    },
+    {
+      "id": "blockquote-458cf764ab7e0dbd3728f85d2002976f",
+      "type": "blockquote",
+      "data": {
+        "format": "html",
+        "text": "Quotation"
+      }
+    },
+    {
+      "id": "MTgxLDYxLDIwLDEwMg",
+      "type": "x-im/mapembed",
+      "data": {
+        "geometry": "POINT (16.288760899999943 56.68542669999999)",
+        "zoom": "7"
+      }
+    },
+    {
+      "id": "table-c90e7db8b2aaf2fec3696f5e48021b4b",
+      "type": "x-im/table",
+      "data": {
+        "caption": "Caption",
+        "meta": "",
+        "tbody": "<tr><td id=\"table-cell-2fb7707e3abeeb4e13c80fc9d6ed17c7\">1</td><td id=\"table-cell-fae7e37c1462cbc3d075c35d4226bbf5\">2</td></tr>"
+      }
+    },
+    {
+      "id": "htmlembed-4de12b1e292d1d8639278ea94e8e21a7",
+      "type": "x-im/htmlembed",
+      "data": {
+        "format": "html",
+        "text": "Embeded html"
+      }
+    },
+    {
+      "id": "youtubeembed-f10aba358e60f02fe015b21514f5ffea",
+      "uri": "https://www.youtube.com/watch?v=qKXRcPROYPo",
+      "url": "https://www.youtube.com/watch?v=qKXRcPROYPo",
+      "type": "x-im/youtube",
+      "data": {
+        "start": "0"
+      },
+      "links": [
+        {
+          "url": "https://www.youtube.com/watch?v=qKXRcPROYPo",
+          "type": "text/html",
+          "title": "Click link to view content",
+          "data": {
+            "context": "Video",
+            "provider": "YouTube"
+          },
+          "rel": "alternate"
+        },
+        {
+          "url": "https://i.ytimg.com/vi/qKXRcPROYPo/hqdefault.jpg",
+          "type": "image/jpg",
+          "rel": "alternate"
+        }
+      ]
+    },
+    {
+      "id": "MjM5LDM1LDE0MSwyMg",
+      "uuid": "2cb2f879-1bc4-4300-90ec-8b0bf9dc5181",
+      "type": "x-im/content-part",
+      "title": "fedf",
+      "data": {
+        "subject": "Summary",
+        "title": "fedf"
+      },
+      "links": [
+        {
+          "uri": "im://content-part/gamefact",
+          "rel": "content-part"
+        }
+      ],
+      "content": [
+        {
+          "id": "paragraph-fc4fc248376024ca004d24e4b0d74813",
+          "type": "x-im/paragraph",
+          "data": {
+            "format": "html",
+            "text": "asdf"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": [
+    {
+      "id": "d103e51-listingteaser",
+      "type": "x-im/listing-teaser"
+    },
+    {
+      "id": "d103e51",
+      "type": "x-im/newsvalue",
+      "data": {
+        "description": "7D",
+        "duration": "604800",
+        "end": "",
+        "format": "lifetimecode",
+        "score": "2"
+      }
+    },
+    {
+      "id": "d103e51-teaser",
+      "type": "x-im/teaser",
+      "title": "Headline",
+      "data": {
+        "subject": "Subject",
+        "text": "Test",
+        "title": "Headline"
+      }
+    }
+  ],
+  "properties": [
+    {
+      "name": "imext:haspublishedversion",
+      "value": "false"
+    }
+  ]
+}
