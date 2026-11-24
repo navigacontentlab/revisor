@@ -587,6 +587,28 @@
       }
     },
     {
+      "declares": {"type": "drophead"},
+      "data": {
+        "format": {"const":"html"},
+        "text": {
+          "optional": true,
+          "allowEmpty": true,
+          "format": "html"
+        }
+      }
+    },
+    {
+      "declares": {"type": "pagedateline"},
+      "data": {
+        "format": {"const":"html"},
+        "text": {
+          "optional": true,
+          "allowEmpty": true,
+          "format": "html"
+        }
+      }
+    },
+    {
       "declares": {"type": "dateline"},
       "data": {
         "format": {"const":"html"},

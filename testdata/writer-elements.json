@@ -2,7 +2,7 @@
   "uuid": "6d1f0c2e-8b3a-4f5d-9c7e-2a4b6c8d0e1f",
   "type": "x-im/article",
   "uri": "im://article/6d1f0c2e-8b3a-4f5d-9c7e-2a4b6c8d0e1f",
-  "title": "Writer's lists, quote, map, table, HTML, YouTube and teaser as tryout's Writer saves them",
+  "title": "Writer's drophead, page dateline, lists, quote, map, table, HTML, YouTube and teaser as tryout's Writer saves them",
   "language": "en-US",
   "status": "draft",
   "content": [
@@ -12,6 +12,22 @@
       "data": {
         "format": "html",
         "text": "Kane sidelined by ankle injury"
+      }
+    },
+    {
+      "id": "drophead-b4bc64064c9691895b0744109efb3df7",
+      "type": "drophead",
+      "data": {
+        "format": "html",
+        "text": "Drophead"
+      }
+    },
+    {
+      "id": "pagedateline-92fa39315d41eb1cc3199b3ebf960605",
+      "type": "pagedateline",
+      "data": {
+        "format": "html",
+        "text": "Pagedateline"
       }
     },
     {
