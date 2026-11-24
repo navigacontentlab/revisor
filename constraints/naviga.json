@@ -306,6 +306,8 @@
       },
       "data": {
         "text": {"optional":true},
+        "title": {"optional":true},
+        "subject": {"optional":true},
         "caption": {"optional":true},
         "photographer": {"optional":true}
       }
@@ -460,6 +462,41 @@
           }
         }
       ]
+    },
+    {
+      "declares": {"type": "x-im/ordered-list"},
+      "data": {
+        "format": {"const":"html"}
+      },
+      "content": [
+        {
+          "declares": {"type":"x-im/paragraph"},
+          "data": {
+            "format": {"const":"html"},
+            "text": {
+              "optional": true,
+              "format": "html"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "declares": {"type": "blockquote"},
+      "data": {
+        "format": {"const":"html"},
+        "text": {
+          "optional": true,
+          "format": "html"
+        }
+      }
+    },
+    {
+      "declares": {"type": "x-im/mapembed"},
+      "data": {
+        "geometry": {},
+        "zoom": {"format":"int", "optional": true}
+      }
     },
     {
       "declares": {"type": "x-im/htmlembed"},
@@ -682,6 +719,13 @@
           "data": {
             "context": {},
             "provider": {}
+          }
+        },
+        {
+          "declares": {"rel":"alternate", "type":"image/jpg"},
+          "maxCount": 1,
+          "attributes": {
+            "url": {"glob":["https://i.ytimg.com/vi/**"]}
           }
         }
       ]
